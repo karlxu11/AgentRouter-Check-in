@@ -6,8 +6,12 @@ on:
   # GitHub Actions 使用 UTC
   # 北京时间 06:45 = UTC 22:45（前一天）
   # ==========================================
-  schedule:
-    - cron: '45 22 * * *'
+  #schedule:
+  #  - cron: '45 22 * * *'
+
+  repository_dispatch:
+    types: [cron-trigger]
+    
   # 支持手动触发
   workflow_dispatch:
 
